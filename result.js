@@ -23,7 +23,7 @@
             this.ok = false;
             this.err = true;
             this.val = val;
-            var stackLines = new Error().stack.split('\n').slice(2);
+            var stackLines = new Error().stack?.split('\n')?.slice(2) ?? [];
             if (stackLines && stackLines.length > 0 && stackLines[0].includes('ErrImpl')) {
                 stackLines.shift();
             }
